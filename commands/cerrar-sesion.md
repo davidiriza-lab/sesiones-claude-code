@@ -1,5 +1,6 @@
 ---
 description: Cierra la sesión guardando el resumen en STATE.md del proyecto activo, hace commit y push, y termina la conversación.
+disable-model-invocation: true
 ---
 
 # /cerrar-sesion

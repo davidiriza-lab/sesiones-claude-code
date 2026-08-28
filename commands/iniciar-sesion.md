@@ -1,5 +1,6 @@
 ---
 description: Carga el contexto de un proyecto (lee STATE.md) para retomar donde se dejó. Acepta el nombre del proyecto como argumento o lista los disponibles.
+argument-hint: [proyecto]
 ---
 
 # /iniciar-sesion [proyecto]
