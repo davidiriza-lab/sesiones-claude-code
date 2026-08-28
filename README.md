@@ -6,7 +6,7 @@ Dos slash-commands y un archivo (`STATE.md`) para que Claude Code retome cualqui
 - `/cerrar-sesion` escribe la sesión de hoy al inicio de `STATE.md`, hace commit, sube el repo y te manda a `/clear`.
 
 Guía completa, con el porqué medido y el formato del archivo:
-**https://davidiriza.com/boveda/inicio-y-cierre-de-sesion**
+**https://davidiriza.com/lab/inicio-y-cierre-de-sesion**
 
 ## Instalación
 
