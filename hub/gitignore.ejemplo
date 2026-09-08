@@ -1,0 +1,39 @@
+# .gitignore del hub — el hub guarda contexto, no código ni material pesado.
+# Copia este archivo como .gitignore en la raíz del hub y ajústalo.
+
+node_modules/
+.env
+.env.local
+.next/
+.DS_Store
+
+# Secretos — nunca se versionan
+**/client_secret*.json
+**/*token*.txt
+**/recovery-codes*.txt
+.vercel
+
+# Exports con datos de personas
+exports/
+**/exports-csv/
+
+# Material pesado: capturas, PDFs, videos, zips.
+# Viven en Descargas, en una carpeta por proyecto, no en el repo.
+*.png
+*.jpg
+*.jpeg
+*.heic
+*.mov
+*.mp4
+*.zip
+*.key
+*.pptx
+*.pdf
+
+# Carpetas personales que no pertenecen al repo
+/Compartidos/
+/tmp/
+
+# Worktrees de Claude Code
+.claude/worktrees/
+.claude/scheduled_tasks.lock

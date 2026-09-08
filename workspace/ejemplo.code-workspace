@@ -1,0 +1,21 @@
+{
+  "folders": [
+    { "name": "⚡ Hub", "path": "Claude_Dashboard" },
+    { "name": "🔵 Personal", "path": "Workspace/🔵 Personal" },
+    { "name": "🟠 Empresa", "path": "Workspace/🟠 Empresa" },
+    { "name": "🟣 Cliente grande", "path": "Workspace/🟣 Cliente grande" },
+    { "name": "⚙️ Utilidades", "path": "Workspace/⚙️ Utilidades" }
+  ],
+  "settings": {
+    "explorer.sortOrder": "default",
+    "files.exclude": {
+      "**/node_modules": true,
+      "**/.git": true,
+      "**/.DS_Store": true,
+      "**/.next": true,
+      "**/venv": true,
+      "**/__pycache__": true,
+      "**/*.tsbuildinfo": true
+    }
+  }
+}
