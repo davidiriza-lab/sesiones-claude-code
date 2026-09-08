@@ -8,7 +8,19 @@ Dos slash-commands y un archivo (`STATE.md`) para que Claude Code retome cualqui
 Guía completa, con el porqué medido y el formato del archivo:
 **https://davidiriza.com/lab/inicio-y-cierre-de-sesion**
 
-## Instalación
+## Instalar de cero: pídeselo a Claude
+
+Pega esto en Claude Code. Te pregunta si quieres solo el sistema de sesiones, solo el workspace, o todo al estilo David Iriza, y lo deja instalado.
+
+```
+Lee https://raw.githubusercontent.com/davidiriza-lab/sesiones-claude-code/main/INSTALAR.md
+y sigue sus instrucciones al pie de la letra. Antes de tocar nada, hazme la pregunta
+de qué quiero instalar y espera mi respuesta.
+```
+
+Lo que hace cada opción está en [INSTALAR.md](INSTALAR.md). Nunca sobrescribe un archivo tuyo sin preguntar, no pide tokens y no instala dependencias.
+
+## Instalación a mano (solo los comandos)
 
 ```bash
 mkdir -p ~/.claude/commands
@@ -41,6 +53,8 @@ Lo que hay en este repo para eso:
 | `workspace/ejemplo.code-workspace` | Workspace multi-raíz de VS Code: hub + vistas en una ventana, con `files.exclude` para todas. |
 | `hub/STACK.md` | Plantilla del registro global de lo instalado y conectado. |
 | `hub/gitignore.ejemplo` | `.gitignore` del hub: fuera secretos, exports y material pesado. |
+| `hub/CLAUDE.md` | CLAUDE.md global con las reglas del sistema (continuidad, git en todo proyecto nuevo, STACK.md, material fuera del código). |
+| `INSTALAR.md` | Las instrucciones que sigue Claude cuando le pides instalar todo de cero. |
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/davidiriza-lab/sesiones-claude-code/main/workspace/crear-vista.sh -o ~/bin/crear-vista.sh && chmod +x ~/bin/crear-vista.sh

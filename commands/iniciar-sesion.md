@@ -20,6 +20,11 @@ Si el usuario responde que quiere continuar aquí, hazlo sin insistir.
   si hay ambigüedad muestra opciones.
 - Sin argumento: si el directorio actual está dentro de ~/proyectos/, úsalo.
   Si no, lista las carpetas de ~/proyectos/ numeradas y pregunta cuál.
+- Si el directorio actual es el hub (~/Claude_Dashboard) y no hay argumento, ofrece dos
+  cosas: cargar la sesión del propio hub (su STATE.md) o elegir un proyecto de la lista.
+- Si no existe ~/Claude_Dashboard ni ~/proyectos/, el sistema no está instalado: dilo en una
+  línea y ofrece instalarlo siguiendo INSTALAR.md del repo
+  https://github.com/davidiriza-lab/sesiones-claude-code (pregunta antes, no lo hagas solo).
 
 ## Paso 2 — Cargar contexto
 1. Lee STATE.md y extrae la sección "Última sesión" (la primera del archivo).
