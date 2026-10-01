@@ -34,4 +34,23 @@ disable-model-invocation: true
    - `git fetch origin --quiet` y lee `git status -sb`.
    - Sin "behind" → `git push`.
    - Con "behind" → `git pull --rebase`; si no hay conflictos, push y menciona en una línea
-     qué llegó de fuera. Si hay conflictos, `git rebase --abort\
+     qué llegó de fuera. Si hay conflictos, `git rebase --abort`, NO fuerces nada,
+     reporta los archivos y deja la conciliación para la próxima sesión.
+   - Sin remote o push fallido → avisa en una línea y continúa. Nunca abortes el cierre por esto.
+
+6. Confirma: fecha, foco de la sesión y el próximo paso guardado.
+
+7. CIERRE REAL — no es opcional. Termina SIEMPRE tu respuesta con este bloque, literal
+   y como último elemento:
+
+   ───────────────────────────────
+   ⛔ CIERRA ESTA CONVERSACIÓN AHORA
+   El STATE.md ya está guardado y commiteado. Todo lo de hoy está a salvo.
+   →  Escribe /clear (o abre un chat nuevo)
+   Mañana: /iniciar-sesion [proyecto] reconstruye todo desde STATE.md.
+   Seguir escribiendo aquí arrastra el contexto de hoy y lo cobra otra vez.
+   ───────────────────────────────
+
+8. Si el usuario sigue escribiendo en esta conversación después del cierre, recuérdaselo
+   en UNA línea antes de responder. Una vez por mensaje, sin bloquear. Si pide continuar
+   aquí explícitamente, deja de avisar.
