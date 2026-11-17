@@ -9,6 +9,10 @@ Guía: https://davidiriza.com/lab/inicio-y-cierre-de-sesion
 Todos los archivos se descargan de
 `https://raw.githubusercontent.com/davidiriza-lab/sesiones-claude-code/main/<ruta>`.
 
+Si leíste este archivo con una herramienta que resume páginas, bájalo completo antes de seguir,
+porque la pregunta del Paso 0 y las plantillas van tal cual:
+`curl -fsSL https://raw.githubusercontent.com/davidiriza-lab/sesiones-claude-code/main/INSTALAR.md`
+
 ## Reglas para toda la instalación
 
 - **Nunca sobrescribas un archivo que ya existe sin preguntar.** Si existe, muestra en una
@@ -49,7 +53,8 @@ Si contesta 1 → haz A. Si contesta 2 → haz B. Si contesta 3 → haz A, B y C
 1. `mkdir -p ~/.claude/commands`
 2. Descarga `commands/iniciar-sesion.md` y `commands/cerrar-sesion.md` a `~/.claude/commands/`.
 3. Pregunta en qué carpeta viven sus proyectos. Si no es `~/proyectos/`, reemplaza esa ruta en
-   `~/.claude/commands/iniciar-sesion.md` por la suya.
+   `~/.claude/commands/iniciar-sesion.md` por la suya. Si la carpeta que eligió todavía no existe,
+   créala (`mkdir -p`): sin ella `/iniciar-sesion` cree que el sistema no está instalado.
 4. Verifica que ambos archivos existen y tienen frontmatter (`---` en la primera línea).
 5. Dile que los comandos aparecen al reiniciar Claude Code, y que la primera vez que corra
    `/iniciar-sesion` en un proyecto sin STATE.md entra al protocolo de proyecto nuevo.
@@ -75,7 +80,7 @@ Si contesta 1 → haz A. Si contesta 2 → haz B. Si contesta 3 → haz A, B y C
 ## C — Hub, CLAUDE.md global y acceso permanente
 
 1. **Hub.** `mkdir -p ~/Claude_Dashboard` y dentro:
-   - `git init` si no es repo.
+   - `git init -b main` si no es repo.
    - Descarga `hub/STACK.md` como `STACK.md` y `hub/gitignore.ejemplo` como `.gitignore`
      (regla de no sobrescribir).
    - Crea `STATE.md` con este contenido, poniendo la fecha de hoy:

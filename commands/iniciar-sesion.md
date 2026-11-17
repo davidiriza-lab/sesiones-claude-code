@@ -31,7 +31,8 @@ Si el usuario responde que quiere continuar aquí, hazlo sin insistir.
 2. Complementa con git: últimos 3 commits y archivos con cambios sin commitear.
 3. Revisa trabajo externo: `git fetch origin --quiet` y lee `git status -sb`.
    - behind N con copia local limpia → `git pull --ff-only` y resume qué llegó (por tema).
-   - behind N con cambios propios → NO hagas pull; repórtalo en "Antes de empezar".
+   - behind N con cambios sin commitear o con commits propios sin subir (ahead y behind a la vez)
+     → NO hagas pull ni rebase; repórtalo en "Antes de empezar" y deja que el usuario decida.
    - ahead N → hay commits sin subir; repórtalo.
 4. Health check (reporta SOLO si algo falla):
    - package.json sin node_modules → "instalar deps con npm install"
@@ -67,12 +68,16 @@ todo lo demás (adapta rutas, cuentas y stack a los del usuario):
 Si es de cliente, pide además el nombre del cliente para la carpeta. Si no queda claro
 en qué cuenta de GitHub va (personal o empresa), esa es la única pregunta extra.
 
-Con la respuesta, sin más preguntas:
+Con la respuesta, sin más preguntas (salta lo que ya exista: carpeta, repo o remote no se
+vuelven a crear ni se sobrescriben):
 1. Crea la carpeta en la ruta que corresponde al tipo.
-2. `git init`.
-3. Repo privado en GitHub: `gh repo create <cuenta>/<nombre> --private`.
+2. `git init -b main`.
+3. Repo privado en GitHub: `gh repo create <cuenta>/<nombre> --private`. Si `gh` no está
+   instalado o no tiene sesión (`gh auth status` falla), deja el repo solo en la computadora,
+   dilo en una línea y sigue; salta también el paso 4 y el push del paso 8.
 4. `git remote add origin ...`.
-5. Escribe STATE.md con este contenido:
+5. Escribe STATE.md con este contenido (sin contraseñas ni llaves; si el repo ya existía y es
+   público o plantilla, agrega antes `STATE.md` a `.gitignore`):
 
    # [nombre-proyecto]
    **Tipo:** [tipo]  **Stack:** [stack]  **Repo:** [URL]  **Deploy:** [Vercel / sin deploy]  **DB:** [Supabase / ninguna]

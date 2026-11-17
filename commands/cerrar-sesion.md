@@ -5,7 +5,11 @@ disable-model-invocation: true
 
 # /cerrar-sesion
 
-1. Detecta el proyecto activo: el git root del directorio actual (o el directorio si no hay git).
+1. Detecta el proyecto activo: el git root del directorio actual (`git rev-parse --show-toplevel`;
+   o el directorio si no hay git). Si en esta conversación se trabajó un proyecto y el directorio
+   actual apunta a otra carpeta (pasa en VS Code con varias carpetas abiertas: el directorio sigue
+   al archivo que está a la vista), escribe en el STATE.md del proyecto trabajado. Si hay duda,
+   pregunta en una línea cuál es antes de escribir.
 
 2. Genera el resumen de la sesión y PREPÉNDELO en STATE.md (después del encabezado,
    antes de las sesiones anteriores) con esta estructura exacta:
@@ -23,12 +27,19 @@ disable-model-invocation: true
    [Una frase que diga exactamente por dónde arrancar la próxima vez.]
    ---
 
+   Nunca escribas contraseñas, tokens ni llaves en STATE.md. Di dónde viven ("en .env.local",
+   "en el panel del servicio"), no su valor.
+
 3. Si STATE.md no existe, créalo con este encabezado antes del resumen:
    # STATE.md — [nombre del proyecto]
    > Bookmark técnico de continuidad. Léelo al inicio de cada sesión y actualízalo al cierre.
    ---
 
 4. Commit: `git add STATE.md && git commit -m "chore: cerrar sesión YYYY-MM-DD"`
+   - Si el repo es público, es plantilla o lo ve gente de fuera (`gh repo view --json visibility,isTemplate`;
+     sin `gh`, pregúntalo), STATE.md no se sube: agrégalo a `.gitignore`, sáltate este commit y dilo
+     en una línea. Si ya se había subido antes, avisa; quitarlo del historial lo decide el usuario.
+   - Si STATE.md ya está en `.gitignore`, sáltate el commit: queda guardado solo en la computadora.
 
 5. Push con conciliación:
    - `git fetch origin --quiet` y lee `git status -sb`.
